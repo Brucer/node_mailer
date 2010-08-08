@@ -1,5 +1,13 @@
 var email = require("mailer");
 
+
+var mimes = [ {data:"mime text message"}, {filename:"test.png"}], {filename:"test.jpg"} ];
+for(var i in mimes)
+{
+	if (mimes[i].filename)
+		mimes[i].data = fs.readFileSync(mimes[i].filename, "binary");
+}
+
 email.send({
   host : "localhost",              // smtp server hostname
   port : "25",                     // smtp server port
@@ -10,5 +18,6 @@ email.send({
   to : "marak.squires@gmail.com",
   from : "obama@whitehouse.gov",
   subject : "node_mailer test email",
-  body : "hello this is a test email from the node_mailer"
+  body : "hello this is a test email from the node_mailer",
+	mimes : mimes
 });
