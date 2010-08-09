@@ -1,7 +1,7 @@
 var email = require("mailer");
 
 
-var mimes = [ {data:"mime text message"}, {filename:"test.png"}], {filename:"test.jpg"} ];
+var mimes = [ {data:"mime text message"}, {filename:"test.png"}, {filename:"test.jpg"} ];
 for(var i in mimes)
 {
 	if (mimes[i].filename)
